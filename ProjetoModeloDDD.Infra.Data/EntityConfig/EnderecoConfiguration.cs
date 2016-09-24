@@ -16,7 +16,7 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             Property(p => p.numero).IsRequired().HasMaxLength(50);
 
-            Property(p => p.complemento).IsRequired().HasMaxLength(50);
+            Property(p => p.complemento);
 
             Property(p => p.bairro).IsRequired().HasMaxLength(100);
 

@@ -16,18 +16,17 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(14, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string Cnpj { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Marca.")]
+        [Required(ErrorMessage = "Preencha o campo Razao Social.")]
         [MaxLength(200, ErrorMessage = "Máximo de {0} caracteres.")]
         [MinLength(2, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string RazaoSocial { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Marca.")]
         [MaxLength(8, ErrorMessage = "Máximo de {0} caracteres.")]
         [MinLength(8, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string InscricaoMunicipal { get; set; }
 
         public int ReceitaBruta { get; set; }
 
-        public EnderecoViewModel Endereco { get; set; }
+        public virtual EnderecoViewModel Endereco { get; set; }
 }
 }

@@ -240,13 +240,13 @@
     <Content Include="Views\Produtos\Create.cshtml" />
     <Content Include="Views\Produtos\Edit.cshtml" />
     <Content Include="Views\Produtos\Delete.cshtml" />
-    <Content Include="Views\Fornecedor\CreateFornecedor.cshtml" />
+    <Content Include="Views\Processo\Index.cshtml" />
+    <Content Include="Views\Processo\Create.cshtml" />
+    <Content Include="Views\Fornecedor\Index.cshtml" />
+    <Content Include="Views\Fornecedor\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Fornecedor\" />
-    <Folder Include="Views\Processo\" />
-    <Folder Include="Views\Produtos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

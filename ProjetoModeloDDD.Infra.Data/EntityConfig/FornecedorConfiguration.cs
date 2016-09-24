@@ -18,13 +18,12 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             Property(p => p.RazaoSocial).IsRequired().HasMaxLength(200);
 
-            Property(p => p.InscricaoMunicipal).IsRequired().HasMaxLength(8);
+            Property(p => p.InscricaoMunicipal);
 
             Property(p => p.ReceitaBruta).IsRequired();
 
-            HasOptional(p => p.Endereco);
-
-            HasOptional(p => p.Produto);
+            HasRequired(p => p.Endereco);
+            
         }
     }
 }

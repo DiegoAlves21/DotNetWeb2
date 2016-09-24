@@ -25,5 +25,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var processoViewModel = Mapper.Map<IEnumerable<Processo>, IEnumerable<ProcessoViewModel>>(_processoApp.GetAll());
             return View(processoViewModel);
         }
+
+        // GET: Processo/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

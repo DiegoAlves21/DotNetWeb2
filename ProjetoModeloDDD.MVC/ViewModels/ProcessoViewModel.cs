@@ -28,6 +28,6 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MaxLength(150, ErrorMessage = "Máximo de {0} caracteres.")]
         [MinLength(2, ErrorMessage = "Mínimo de {0} caracteres.")]
 
-        public FornecedorViewModel Fornecedor { get; set; }
+        public virtual FornecedorViewModel Fornecedor { get; set; }
     }
 }
