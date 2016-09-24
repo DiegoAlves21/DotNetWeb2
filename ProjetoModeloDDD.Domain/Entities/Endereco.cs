@@ -8,6 +8,7 @@ namespace ProjetoModeloDDD.Domain.Entities
 {
     public class Endereco
     {
+        public int EnderecoId { get; set; }
         public string logradouro { get; set; }
         public string numero { get; set; }
         public string complemento { get; set; }
