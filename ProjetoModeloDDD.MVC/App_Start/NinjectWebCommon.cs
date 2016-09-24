@@ -70,16 +70,19 @@ namespace ProjetoModeloDDD.MVC.App_Start
             kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
             kernel.Bind<IFornecedorAppService>().To<FornecedorAppService>();
             kernel.Bind<IProcessoAppService>().To<ProcessoAppService>();
+            kernel.Bind<IAutoInfracaoAppService>().To<AutoInfracaoAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IProdutoService>().To<ProdutoService>();
             kernel.Bind<IFornecedorService>().To<FornecedorService>();
             kernel.Bind<IProcessoService>().To<ProcessoService>();
+            kernel.Bind<IAutoInfracaoService>().To<AutoInfracaoService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IProdutoRepository>().To<ProdutoRepository>();
             kernel.Bind<IFornecedorRepository>().To<FornecedorRepository>();
             kernel.Bind<IProcessoRepository>().To<ProcessoRepository>();
+            kernel.Bind<IAutoInfracaoRepository>().To<AutoInfracaoRepository>();
         }        
     }
 }

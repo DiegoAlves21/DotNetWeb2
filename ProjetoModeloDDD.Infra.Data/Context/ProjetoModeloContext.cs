@@ -31,6 +31,7 @@ namespace ProjetoModeloDDD.Infra.Data.Context
             modelBuilder.Configurations.Add(new FornecedorConfiguration());
             modelBuilder.Configurations.Add(new ProcessoConfiguration());
             modelBuilder.Configurations.Add(new EnderecoConfiguration());
+            modelBuilder.Configurations.Add(new AutoInfracaoConfiguration());
         }
 
         public override int SaveChanges()
@@ -54,5 +55,6 @@ namespace ProjetoModeloDDD.Infra.Data.Context
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Processo> Processos { get; set; }
+        public DbSet<AutoInfracao> AutoInfracoes { get; set; }
     }
 }
