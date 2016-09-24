@@ -14,5 +14,6 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string InscricaoMunicipal { get; set; }
         public decimal ReceitaBruta { get; set; }
         public Endereco Endereco { get; set; }
+        public Produto Produto { get; set; }
     }
 }

@@ -20,6 +20,8 @@ namespace ProjetoModeloDDD.MVC.AutoMapper
         {
             //Deprecated, será removido no 5.0
             CreateMap<ProdutoViewModel, Produto>();
+            CreateMap<FornecedorViewModel, Fornecedor>();
+            CreateMap<ProcessoViewModel, Processo>();
         }
     }
 }

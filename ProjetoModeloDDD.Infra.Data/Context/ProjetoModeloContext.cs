@@ -29,6 +29,7 @@ namespace ProjetoModeloDDD.Infra.Data.Context
 
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
             modelBuilder.Configurations.Add(new FornecedorConfiguration());
+            modelBuilder.Configurations.Add(new ProcessoConfiguration());
         }
 
         public override int SaveChanges()
@@ -51,5 +52,6 @@ namespace ProjetoModeloDDD.Infra.Data.Context
         
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<Processo> Processos { get; set; }
     }
 }

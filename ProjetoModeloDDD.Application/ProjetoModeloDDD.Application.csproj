@@ -44,7 +44,9 @@
     <Compile Include="FornecedorAppService.cs" />
     <Compile Include="Interface\IAppServiceBase.cs" />
     <Compile Include="Interface\IFornecedorAppService.cs" />
+    <Compile Include="Interface\IProcessoAppService.cs" />
     <Compile Include="Interface\IProdutoAppService.cs" />
+    <Compile Include="ProcessoAppService.cs" />
     <Compile Include="ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
