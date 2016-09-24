@@ -20,13 +20,13 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             //Property(p => p.Fornecedor.RazaoSocial).IsRequired().HasMaxLength(200);
 
-            HasRequired(p => p.Fornecedor.Cnpj).WithRequiredPrincipal();
-
-            HasRequired(p => p.Fornecedor.RazaoSocial).WithRequiredPrincipal();
+            Property(p => p.relatoFiscalizacao).IsRequired();
 
             Property(p => p.dataRelato).IsRequired();
 
             Property(p => p.fiscalResponsavel).IsRequired();
+
+            HasRequired(p => p.Fornecedor);
         }
     }
 }

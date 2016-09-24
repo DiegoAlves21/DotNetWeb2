@@ -22,19 +22,9 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             Property(p => p.ReceitaBruta).IsRequired();
 
-            Property(p => p.Endereco.logradouro).IsRequired().HasMaxLength(100);
+            HasOptional(p => p.Endereco);
 
-            Property(p => p.Endereco.numero).IsRequired().HasMaxLength(50);
-
-            Property(p => p.Endereco.complemento).IsRequired().HasMaxLength(50);
-
-            Property(p => p.Endereco.bairro).IsRequired().HasMaxLength(100);
-
-            Property(p => p.Endereco.municipio).IsRequired().HasMaxLength(200);
-
-            Property(p => p.Endereco.cep).IsRequired().HasMaxLength(8);
-
-            Property(p => p.Endereco.uf).IsRequired().HasMaxLength(2);
+            HasOptional(p => p.Produto);
         }
     }
 }

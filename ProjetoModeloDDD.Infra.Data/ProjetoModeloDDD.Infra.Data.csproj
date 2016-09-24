@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\ProjetoModeloContext.cs" />
+    <Compile Include="EntityConfig\EnderecoConfiguration.cs" />
     <Compile Include="EntityConfig\FornecedorConfiguration.cs" />
     <Compile Include="EntityConfig\ProcessoConfiguration.cs" />
     <Compile Include="EntityConfig\ProdutoConfiguration.cs" />

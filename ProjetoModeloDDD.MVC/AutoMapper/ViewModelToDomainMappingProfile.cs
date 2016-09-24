@@ -22,6 +22,7 @@ namespace ProjetoModeloDDD.MVC.AutoMapper
             CreateMap<ProdutoViewModel, Produto>();
             CreateMap<FornecedorViewModel, Fornecedor>();
             CreateMap<ProcessoViewModel, Processo>();
+            CreateMap<EnderecoViewModel, Endereco>();
         }
     }
 }

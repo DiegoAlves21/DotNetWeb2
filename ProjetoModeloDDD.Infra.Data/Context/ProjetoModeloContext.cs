@@ -30,6 +30,7 @@ namespace ProjetoModeloDDD.Infra.Data.Context
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
             modelBuilder.Configurations.Add(new FornecedorConfiguration());
             modelBuilder.Configurations.Add(new ProcessoConfiguration());
+            modelBuilder.Configurations.Add(new EnderecoConfiguration());
         }
 
         public override int SaveChanges()
