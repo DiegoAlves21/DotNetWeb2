@@ -50,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppServiceBase.cs" />
+    <Compile Include="AutoInfracaoAppService.cs" />
     <Compile Include="FornecedorAppService.cs" />
     <Compile Include="Interface\IAppServiceBase.cs" />
+    <Compile Include="Interface\IAutoInfracaoAppService.cs" />
     <Compile Include="Interface\IFornecedorAppService.cs" />
     <Compile Include="Interface\IProcessoAppService.cs" />
     <Compile Include="Interface\IProdutoAppService.cs" />
