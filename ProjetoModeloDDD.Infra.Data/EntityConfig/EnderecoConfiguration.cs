@@ -22,9 +22,9 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             Property(p => p.municipio).IsRequired().HasMaxLength(200);
 
-            Property(p => p.cep).IsRequired().HasMaxLength(8);
+            Property(p => p.cep).IsRequired().HasMaxLength(11);
 
-            Property(p => p.uf).IsRequired().HasMaxLength(2);
+            Property(p => p.uf).IsRequired();
         }
         
     }

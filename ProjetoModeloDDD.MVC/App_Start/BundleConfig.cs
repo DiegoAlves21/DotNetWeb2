@@ -26,6 +26,11 @@ namespace ProjetoModeloDDD.MVC
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/mask").Include(
+                    "~/Scripts/jquery.mask.js",
+                    "~/Scripts/jquery.mask.min.js"));
         }
     }
 }

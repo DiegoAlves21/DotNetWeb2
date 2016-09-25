@@ -14,7 +14,7 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         {
             HasKey(p => p.FornecedorId);
 
-            Property(p => p.Cnpj).IsRequired().HasMaxLength(14);
+            Property(p => p.Cnpj).IsRequired().HasMaxLength(18);
 
             Property(p => p.RazaoSocial).IsRequired().HasMaxLength(200);
 

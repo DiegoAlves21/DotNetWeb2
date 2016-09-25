@@ -12,7 +12,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string Cnpj { get; set; }
         public string RazaoSocial { get; set; }
         public string InscricaoMunicipal { get; set; }
-        public decimal ReceitaBruta { get; set; }
+        public string ReceitaBruta { get; set; }
         public Endereco Endereco { get; set; }
     }
 }

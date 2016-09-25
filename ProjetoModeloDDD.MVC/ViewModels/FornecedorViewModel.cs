@@ -12,8 +12,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public int FornecedorId { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Cnpj.")]
-        [MaxLength(14, ErrorMessage = "Máximo de {0} caracteres.")]
-        [MinLength(14, ErrorMessage = "Mínimo de {0} caracteres.")]
+        [MaxLength(18, ErrorMessage = "Máximo de {0} caracteres.")]
+        [MinLength(18, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string Cnpj { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Razao Social.")]
@@ -21,11 +21,11 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string RazaoSocial { get; set; }
 
-        [MaxLength(8, ErrorMessage = "Máximo de {0} caracteres.")]
-        [MinLength(8, ErrorMessage = "Mínimo de {0} caracteres.")]
+        [MaxLength(11, ErrorMessage = "Máximo de {0} caracteres.")]
+        [MinLength(11, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string InscricaoMunicipal { get; set; }
 
-        public int ReceitaBruta { get; set; }
+        public string ReceitaBruta { get; set; }
 
         public virtual EnderecoViewModel Endereco { get; set; }
 }

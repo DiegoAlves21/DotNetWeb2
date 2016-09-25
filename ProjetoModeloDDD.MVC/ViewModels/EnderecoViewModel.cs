@@ -36,13 +36,11 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string municipio { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Cep.")]
-        [MaxLength(8, ErrorMessage = "Máximo de {0} caracteres.")]
-        [MinLength(8, ErrorMessage = "Mínimo de {0} caracteres.")]
+        [MaxLength(9, ErrorMessage = "Máximo de {0} caracteres.")]
+        [MinLength(9, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string cep { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Uf.")]
-        [MaxLength(2, ErrorMessage = "Máximo de {0} caracteres.")]
-        [MinLength(2, ErrorMessage = "Mínimo de {0} caracteres.")]
-        public int uf { get; set; }
+        public string uf { get; set; }
     }
 }
