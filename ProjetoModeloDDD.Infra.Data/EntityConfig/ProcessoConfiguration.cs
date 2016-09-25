@@ -14,11 +14,7 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         {
             HasKey(p => p.ProcessoId);
 
-            Property(p => p.numeroProcesso).IsRequired().HasMaxLength(28);
-
-            //Property(p => p.Fornecedor.Cnpj).IsRequired().HasMaxLength(14);
-
-            //Property(p => p.Fornecedor.RazaoSocial).IsRequired().HasMaxLength(200);
+            Property(p => p.numeroProcesso).IsRequired().HasMaxLength(60);
 
             Property(p => p.relatoFiscalizacao).IsRequired();
 
@@ -26,7 +22,9 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             Property(p => p.fiscalResponsavel).IsRequired();
 
-            HasRequired(p => p.Fornecedor);
+            HasOptional(p => p.Fornecedor);
+
+            //HasOptional(p => p.Fornecedor.Endereco);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string RazaoSocial { get; set; }
         public string InscricaoMunicipal { get; set; }
         public string ReceitaBruta { get; set; }
+        public int EnderecoId { get; set; }
         public Endereco Endereco { get; set; }
     }
 }

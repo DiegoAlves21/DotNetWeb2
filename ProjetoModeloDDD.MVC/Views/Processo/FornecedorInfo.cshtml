@@ -1,0 +1,93 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.FornecedorViewModel
+
+    
+    <div class="">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cnpj, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RazaoSocial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RazaoSocial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InscricaoMunicipal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InscricaoMunicipal, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.InscricaoMunicipal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.logradouro, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Endereço")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco.logradouro, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco.logradouro, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.numero, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Número")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco.numero, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco.numero, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.complemento, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Complemento")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco.complemento, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco.complemento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.bairro, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Bairro")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco.bairro, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco.bairro, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.cep, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Cep")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco.cep, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco.cep, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.municipio, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Município")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco.municipio, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco.municipio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.uf, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Município")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Endereco.uf, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Endereco.uf, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.EnderecoId)
+        @Html.HiddenFor(model => model.FornecedorId)
+
+    </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
