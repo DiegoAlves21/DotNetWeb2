@@ -23,7 +23,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         public string multa { get; set; }
 
-        public virtual ProcessoViewModel processo { get; set; }
+        public ProcessoViewModel processo { get; set; }
 
     }
 }

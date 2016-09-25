@@ -1,0 +1,130 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.ProcessoViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProcessoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroProcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroProcesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.relatoFiscalizacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.relatoFiscalizacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataRelato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataRelato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fiscalResponsavel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fiscalResponsavel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.RazaoSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.RazaoSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.InscricaoMunicipal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.InscricaoMunicipal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Endereco.bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Endereco.bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Endereco.cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Endereco.cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Endereco.complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Endereco.complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Endereco.logradouro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Endereco.logradouro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Endereco.municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Endereco.municipio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Endereco.numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Endereco.numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Endereco.uf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Endereco.uf)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProcessoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

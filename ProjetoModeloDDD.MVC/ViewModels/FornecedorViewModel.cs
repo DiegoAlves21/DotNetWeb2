@@ -30,6 +30,6 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         [ForeignKey("Endereco")]
         public int EnderecoId { get; set; }
-        public virtual EnderecoViewModel Endereco { get; set; }
+        public EnderecoViewModel Endereco { get; set; }
 }
 }

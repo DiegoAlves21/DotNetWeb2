@@ -13,6 +13,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string dataRelato { get; set; }
         public string fiscalResponsavel { get; set; }
         public string numeroProcesso { get; set; }
+        public int FornecedorId { get; set; }
         public Fornecedor Fornecedor { get; set; }
     }
 }

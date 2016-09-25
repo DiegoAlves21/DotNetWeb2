@@ -27,6 +27,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Index()
         {
             var processoViewModel = Mapper.Map<IEnumerable<Processo>, IEnumerable<ProcessoViewModel>>(_processoApp.GetAll());
+
+            foreach(ProcessoViewModel processo in processoViewModel)
+            {
+                processoViewModel.Where(p => p.FornecedorId == processo.FornecedorId).SingleOrDefault().Fornecedor = new FornecedorViewModel() { Cnpj = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processo.FornecedorId)).Cnpj };
+            }
+
             return View(processoViewModel);
         }
 
@@ -39,9 +45,17 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // POST: Processo/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProcessoViewModel processo, FornecedorViewModel fornecedor)
+        public ActionResult Create(ProcessoViewModel processo)
         {
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.BuscarPorCnpj(processo.Fornecedor.Cnpj).SingleOrDefault());
+            //var enderecoViewModel = Mapper.Map<Endereco, EnderecoViewModel>(_enderecoApp.GetById(fornecedorViewModel.EnderecoId));
             processo.numeroProcesso = GerarNumeroPorcesso(processo.Fornecedor.Cnpj);
+            //fornecedorViewModel.Endereco = enderecoViewModel;
+            //processo.Fornecedor = fornecedorViewModel;
+
+            processo.Fornecedor = null;
+            processo.FornecedorId = fornecedorViewModel.FornecedorId;
+            //processo.Fornecedor.Endereco = new EnderecoViewModel() { EnderecoId = enderecoViewModel.EnderecoId };
             var processoDomain = Mapper.Map<ProcessoViewModel, Processo>(processo);
             _processoApp.Add(processoDomain);
 
@@ -63,6 +77,68 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             //var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(_processoApp.GetById(ProcessoId));
             return View("~/Views/AutoInfracao/Create.cshtml");
+        }
+
+        // GET: Processo/Details
+        public ActionResult Details(int id)
+        {
+            var processo = _processoApp.GetById(id);
+            var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(processo);
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processo.ProcessoId));
+            var enderecoViewModel = Mapper.Map<Endereco, EnderecoViewModel>(_enderecoApp.GetById(fornecedorViewModel.EnderecoId));
+            fornecedorViewModel.Endereco = enderecoViewModel;
+            processoViewModel.Fornecedor = fornecedorViewModel;
+            return View(processoViewModel);
+        }
+
+        // GET: Processo/Edit/5
+        public ActionResult Edit(int id)
+        {
+            var processo = _processoApp.GetById(id);
+            var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(processo);
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processo.ProcessoId));
+            var enderecoViewModel = Mapper.Map<Endereco, EnderecoViewModel>(_enderecoApp.GetById(fornecedorViewModel.EnderecoId));
+            fornecedorViewModel.Endereco = enderecoViewModel;
+            processoViewModel.Fornecedor = fornecedorViewModel;
+            return View(processoViewModel);
+        }
+
+        // POST: Processo/Edit/5
+        [HttpPost]
+        public ActionResult Edit(ProcessoViewModel processo)
+        {
+            if (ModelState.IsValid)
+            {
+                var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.BuscarPorCnpj(processo.Fornecedor.Cnpj).SingleOrDefault());
+
+                processo.Fornecedor = null;
+                processo.FornecedorId = fornecedorViewModel.FornecedorId;
+
+                var processoDomain = Mapper.Map<ProcessoViewModel, Processo>(processo);
+                _processoApp.Update(processoDomain);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(processo);
+        }
+
+        // GET: Processo/Delete/5
+        public ActionResult Delete(int id)
+        {
+            var processo = _processoApp.GetById(id);
+            var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(processo);
+            return View(processoViewModel);
+        }
+
+        // POST: Processo/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var processo = _processoApp.GetById(id);
+            _processoApp.Remove(processo);
+            return RedirectToAction("Index");
         }
 
         private string GerarNumeroPorcesso(string CNPJ)

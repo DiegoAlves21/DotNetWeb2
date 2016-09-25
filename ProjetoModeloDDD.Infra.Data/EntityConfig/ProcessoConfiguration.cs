@@ -22,7 +22,7 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             Property(p => p.fiscalResponsavel).IsRequired();
 
-            HasOptional(p => p.Fornecedor);
+            HasRequired(p => p.Fornecedor);
 
             //HasOptional(p => p.Fornecedor.Endereco);
         }

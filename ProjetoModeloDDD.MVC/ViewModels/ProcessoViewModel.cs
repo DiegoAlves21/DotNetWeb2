@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -24,6 +25,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Required(ErrorMessage = "Preencha o campo Fiscal Responsável.")]
         public string fiscalResponsavel { get; set; }
 
-        public virtual FornecedorViewModel Fornecedor { get; set; }
+        [ForeignKey("Fornecedor")]
+        public int FornecedorId { get; set; }
+        public FornecedorViewModel Fornecedor { get; set; }
     }
 }

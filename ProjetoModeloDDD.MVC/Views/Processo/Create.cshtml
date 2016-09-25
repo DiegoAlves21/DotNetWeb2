@@ -51,6 +51,8 @@
             </div>
         </div>
 
+        <input type="hidden" name="FornecedorId" id="FornecedorId" value="">
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -80,6 +82,7 @@
                     console.log(data);
                     $("#divFornecedor").html(data);
                     $("#divBuscaFornecedor").hide();
+                    $("#FornecedorId").val($("#Fornecedor_Id").val());
                 }
                 });
             });
