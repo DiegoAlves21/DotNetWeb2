@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -27,6 +28,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         public string ReceitaBruta { get; set; }
 
+        [ForeignKey("Endereco")]
+        public int EnderecoId { get; set; }
         public virtual EnderecoViewModel Endereco { get; set; }
 }
 }

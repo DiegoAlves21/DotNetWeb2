@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.numeroProcesso)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Fornecedor.Cnpj)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.relatoFiscalizacao)
         </th>
         <th>
@@ -32,6 +35,9 @@
             @Html.DisplayFor(modelItem => item.numeroProcesso)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Fornecedor.Cnpj)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.relatoFiscalizacao)
         </td>
         <td>
@@ -39,6 +45,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.fiscalResponsavel)
+        </td>
+        <td>
+            <button type="button" class="btn btn-default">@Html.ActionLink("Gerar Auto Infração", "GerarAutoInfracao", new { id = item.ProcessoId }) |</button>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProcessoId }) |

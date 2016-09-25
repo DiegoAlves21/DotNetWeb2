@@ -56,5 +56,6 @@ namespace ProjetoModeloDDD.Infra.Data.Context
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Processo> Processos { get; set; }
         public DbSet<AutoInfracao> AutoInfracoes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
     }
 }

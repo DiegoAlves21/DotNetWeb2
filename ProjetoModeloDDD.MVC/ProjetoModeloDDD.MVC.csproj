@@ -255,6 +255,7 @@
     <Content Include="Views\Fornecedor\Create.cshtml" />
     <Content Include="Views\AutoInfracao\Create.cshtml" />
     <Content Include="Views\AutoInfracao\Details.cshtml" />
+    <Content Include="Views\Processo\FornecedorInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
