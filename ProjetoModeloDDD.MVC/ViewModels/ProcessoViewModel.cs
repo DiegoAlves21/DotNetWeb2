@@ -24,10 +24,6 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Required(ErrorMessage = "Preencha o campo Fiscal Responsável.")]
         public string fiscalResponsavel { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Relato Fiscalização.")]
-        [MaxLength(150, ErrorMessage = "Máximo de {0} caracteres.")]
-        [MinLength(2, ErrorMessage = "Mínimo de {0} caracteres.")]
-
         public virtual FornecedorViewModel Fornecedor { get; set; }
     }
 }

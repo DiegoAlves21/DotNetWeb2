@@ -4,47 +4,87 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Auto de Infração</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>AutoInfracaoViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
-            @Html.LabelFor(model => model.gravidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.processo.Fornecedor.Cnpj, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "CNPJ")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.processo.Fornecedor.Cnpj, new { htmlAttributes = new { /*@readonly = "readonly", */ @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.processo.Fornecedor.Cnpj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.processo.Fornecedor.RazaoSocial, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Razão Social")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.processo.Fornecedor.RazaoSocial, new { htmlAttributes = new {/* @readonly = "readonly", */ @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.processo.Fornecedor.RazaoSocial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.processo.Fornecedor.ReceitaBruta, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Receita Bruta")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.processo.Fornecedor.ReceitaBruta, new { htmlAttributes = new {/* @readonly = "readonly", */ @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.processo.Fornecedor.ReceitaBruta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.processo.dataRelato, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Data do Relato")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.processo.dataRelato, new { htmlAttributes = new { /*@readonly = "readonly", */ @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.processo.dataRelato, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.processo.relatoFiscalizacao, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Relato da Fiscalização")
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.processo.relatoFiscalizacao, new { htmlAttributes = new { /*@readonly = "readonly",*/ @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.processo.relatoFiscalizacao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.gravidade, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Gravidade")
             <div class="col-md-10">
                 @Html.EditorFor(model => model.gravidade, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.gravidade, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @*<div class="form-group">
-        @Html.LabelFor(model => model.atenuante, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.atenuante)
-                @Html.ValidationMessageFor(model => model.atenuante, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.atenuante, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Atenuante")
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.atenuante)
+                    @Html.ValidationMessageFor(model => model.atenuante, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.agravante, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.agravante, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Agravante")
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.agravante)
                     @Html.ValidationMessageFor(model => model.agravante, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.multa, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.multa, htmlAttributes: new { @class = "control-label col-md-2" }, labelText: "Multa")
             <div class="col-md-10">
                 @Html.EditorFor(model => model.multa, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.multa, "", new { @class = "text-danger" })
@@ -53,14 +93,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Home", "Index")
 </div>
 
 @section Scripts {
