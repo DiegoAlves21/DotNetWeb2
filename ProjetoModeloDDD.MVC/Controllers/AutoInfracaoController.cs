@@ -14,7 +14,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
     {
 
         private readonly IAutoInfracaoAppService _autoInfracaoApp;
-
+        
         public AutoInfracaoController(IAutoInfracaoAppService autoInfracaoApp)
         {
             _autoInfracaoApp = autoInfracaoApp;
@@ -33,7 +33,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             //var autoInfracaoDomain = Mapper.Map<AutoInfracaoViewModel, AutoInfracao>(autoInfracao);
             //_autoInfracaoApp.Add(autoInfracaoDomain);
-
+            
             return RedirectToAction("Details", autoInfracao);
         }
 

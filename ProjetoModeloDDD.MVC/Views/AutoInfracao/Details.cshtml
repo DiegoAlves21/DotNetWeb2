@@ -4,12 +4,51 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>AutoInfracaoViewModel</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.processo.Fornecedor.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.processo.Fornecedor.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.processo.Fornecedor.RazaoSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.processo.Fornecedor.RazaoSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.processo.Fornecedor.ReceitaBruta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.processo.Fornecedor.ReceitaBruta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.processo.dataRelato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.processo.dataRelato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.processo.relatoFiscalizacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.processo.relatoFiscalizacao)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.gravidade)
         </dt>

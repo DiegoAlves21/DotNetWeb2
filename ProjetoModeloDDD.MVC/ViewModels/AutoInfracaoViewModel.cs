@@ -21,9 +21,6 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Required(ErrorMessage = "Preencha o campo Agravante.")]
         public Boolean agravante { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Multa.")]
-        [MaxLength(100, ErrorMessage = "Máximo de {0} caracteres.")]
-        [MinLength(1, ErrorMessage = "Mínimo de {0} caracteres.")]
         public string multa { get; set; }
 
         public virtual ProcessoViewModel processo { get; set; }

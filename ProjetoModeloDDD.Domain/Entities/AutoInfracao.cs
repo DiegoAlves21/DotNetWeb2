@@ -13,7 +13,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public int gravidade { get; set; }
         public Boolean atenuante { get; set; }
         public Boolean agravante { get; set; }
-        public decimal multa { get; set; }
+        public string multa { get; set; }
         public Processo Processo { get; set; }
 
     }
