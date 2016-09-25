@@ -20,6 +20,8 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
             Property(p => p.multa).IsRequired();
 
             Property(p => p.agravante).IsRequired();
+
+            HasRequired(p => p.Processo);
         }
     }
 }

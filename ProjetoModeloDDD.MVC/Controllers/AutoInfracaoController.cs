@@ -20,11 +20,28 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _autoInfracaoApp = autoInfracaoApp;
         }
 
-        // GET: AutoInfracao
-        public ActionResult Index()
+        // GET: AutoInfracao/Create
+        public ActionResult Create()
         {
-            var autoInfracaoViewModel = Mapper.Map<IEnumerable<AutoInfracao>, IEnumerable<AutoInfracaoViewModel>>(_autoInfracaoApp.GetAll());
-            return View(autoInfracaoViewModel);
+            return View();
         }
+
+        // POST: AutoInfracao/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(AutoInfracaoViewModel autoInfracao)
+        {
+            //var autoInfracaoDomain = Mapper.Map<AutoInfracaoViewModel, AutoInfracao>(autoInfracao);
+            //_autoInfracaoApp.Add(autoInfracaoDomain);
+
+            return RedirectToAction("Details", autoInfracao);
+        }
+
+        // GET: AutoInfracao/Details
+        public ActionResult Details(AutoInfracaoViewModel autoInfracao)
+        {
+            return View(autoInfracao);
+        }
+
     }
 }

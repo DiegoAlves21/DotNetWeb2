@@ -1,0 +1,50 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.AutoInfracaoViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AutoInfracaoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gravidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gravidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.atenuante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atenuante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.agravante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.agravante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.multa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.multa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AutoInfracaoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

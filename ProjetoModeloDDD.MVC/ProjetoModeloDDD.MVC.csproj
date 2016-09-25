@@ -253,10 +253,11 @@
     <Content Include="Views\Processo\Create.cshtml" />
     <Content Include="Views\Fornecedor\Index.cshtml" />
     <Content Include="Views\Fornecedor\Create.cshtml" />
+    <Content Include="Views\AutoInfracao\Create.cshtml" />
+    <Content Include="Views\AutoInfracao\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AutoInfracao\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
