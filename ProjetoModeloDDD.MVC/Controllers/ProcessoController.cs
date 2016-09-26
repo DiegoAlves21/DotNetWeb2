@@ -73,10 +73,15 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
         // GET: Processo/GerarAutoInfracao
-        public ActionResult GerarAutoInfracao(int ProcessoId)
+        public ActionResult GerarAutoInfracao(int id)
         {
-            //var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(_processoApp.GetById(ProcessoId));
-            return View("~/Views/AutoInfracao/Create.cshtml");
+            var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(_processoApp.GetById(id));
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processoViewModel.FornecedorId));
+            var enderecoViewModel = Mapper.Map<Endereco, EnderecoViewModel>(_enderecoApp.GetById(fornecedorViewModel.EnderecoId));
+            processoViewModel.Fornecedor = fornecedorViewModel;
+            processoViewModel.Fornecedor.Endereco = enderecoViewModel;
+            AutoInfracaoViewModel autoInfracao = new AutoInfracaoViewModel() { processo = processoViewModel };
+            return View("~/Views/AutoInfracao/Create.cshtml", autoInfracao);
         }
 
         // GET: Processo/Details
@@ -84,7 +89,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var processo = _processoApp.GetById(id);
             var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(processo);
-            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processo.ProcessoId));
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processo.FornecedorId));
             var enderecoViewModel = Mapper.Map<Endereco, EnderecoViewModel>(_enderecoApp.GetById(fornecedorViewModel.EnderecoId));
             fornecedorViewModel.Endereco = enderecoViewModel;
             processoViewModel.Fornecedor = fornecedorViewModel;
@@ -96,7 +101,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var processo = _processoApp.GetById(id);
             var processoViewModel = Mapper.Map<Processo, ProcessoViewModel>(processo);
-            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processo.ProcessoId));
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(processo.FornecedorId));
             var enderecoViewModel = Mapper.Map<Endereco, EnderecoViewModel>(_enderecoApp.GetById(fornecedorViewModel.EnderecoId));
             fornecedorViewModel.Endereco = enderecoViewModel;
             processoViewModel.Fornecedor = fornecedorViewModel;

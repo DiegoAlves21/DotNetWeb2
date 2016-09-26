@@ -7,7 +7,7 @@
 <h2>Auto de Infração</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "AutoInfracao", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -101,6 +101,8 @@
                 </div>
             </div>
         </div>
+
+        <input type="hidden" name="ProcessoId" id="ProcessoId" value="@Model.processo.ProcessoId">
         
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -14,6 +14,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public Boolean atenuante { get; set; }
         public Boolean agravante { get; set; }
         public string multa { get; set; }
+        public int ProcessoId { get; set; }
         public Processo Processo { get; set; }
 
     }
